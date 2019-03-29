@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './App.css';
+import Titles from './components/title';
 import Form from './components/form'; 
 import Weather from './components/weather'; 
 

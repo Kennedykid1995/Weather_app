@@ -9,12 +9,15 @@ const styles = theme => ({
         boxShadow: 'none',
         padding: 10,
         borderRadius: 10,
+        background: 'none',
     },
     city:{
 
     },
     temp:{
-
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
     },
     humidity:{
 
@@ -26,15 +29,21 @@ const styles = theme => ({
 const Weather = props => {
     const {classes} = props;
     return(
-        <Card>
-            <div>
+        <div>
+        <Card className={classes.card}>
+        <div>
             {props.city && <Typography variant="h5" component="h3" >{props.city}</Typography>}
+        </div>
+        <div className={classes.temp}>
             {props.temperature && <Typography variant="h1" component="h1">{props.temperature}</Typography>}
             {props.humidity && <Typography variant="h6" component="h4">{props.humidity}</Typography>}
+        </div>
+        <div>
             {props.description && <Typography variant="h5" component="h2">{props.description}</Typography>}
+        </div>
             {props.error && <Typography>{props.error}</Typography>}
-            </div>
         </Card>
+        </div>
     )
 }
 export default withStyles(styles)(Weather); 

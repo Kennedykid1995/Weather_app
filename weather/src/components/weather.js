@@ -12,18 +12,19 @@ const styles = theme => ({
         background: 'none',
     },
     city:{
-
+        padding: 10,
     },
     temp:{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
+        alignItems: 'center',
     },
     humidity:{
 
     },
     description:{
-
+        padding: 10,
     }
 })
 const Weather = props => {
@@ -31,14 +32,14 @@ const Weather = props => {
     return(
         <div>
         <Card className={classes.card}>
-        <div>
+        <div className={classes.city}>
             {props.city && <Typography variant="h5" component="h3" >{props.city}</Typography>}
         </div>
         <div className={classes.temp}>
             {props.temperature && <Typography variant="h1" component="h1">{props.temperature}</Typography>}
             {props.humidity && <Typography variant="h6" component="h4">{props.humidity}</Typography>}
         </div>
-        <div>
+        <div className={classes.description}>
             {props.description && <Typography variant="h5" component="h2">{props.description}</Typography>}
         </div>
             {props.error && <Typography>{props.error}</Typography>}
